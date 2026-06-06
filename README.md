@@ -5,10 +5,17 @@
   ## Features
 
   - `/start` — welcome message
-  - `/books` — paginated inline-keyboard catalog (5 books per page)
+  - `/books` — paginated catalog (📖 free · ⭐ premium)
+  - `/premium` — premium-only catalog
   - `/search [query]` — search by title, author, or genre
-  - Tapping a book shows details + Download button
-  - Download sends the PDF directly in chat
+  - **8 free books** — download instantly
+  - **20 premium books** — unlock each for **75 Telegram Stars**
+
+  ## Telegram Stars payment flow
+
+  1. Tap a premium book → tap **Buy for 75 Stars**
+  2. Telegram shows a native payment dialog
+  3. Confirm → book PDF is sent immediately
 
   ## Deploy on Railway
 
@@ -27,6 +34,6 @@
   ## Adding books
 
   1. Copy your PDF into `bot/books/`
-  2. Add an entry to `CATALOG` in `bot/catalog.py`
+  2. Add an entry to `CATALOG` in `bot/catalog.py` with `"premium": True/False`
   3. Restart the bot
   

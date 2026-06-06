@@ -1,5 +1,5 @@
 CATALOG = [
-    # ── Classics already included ─────────────────────────────────────────
+    # ── Free classics (ids 1-8) ────────────────────────────────────────────
     {
         "id": 1,
         "title": "The Art of War",
@@ -13,6 +13,7 @@ CATALOG = [
         ),
         "filename": "the_art_of_war.pdf",
         "gutenberg_id": 132,
+        "premium": False,
     },
     {
         "id": 2,
@@ -27,6 +28,7 @@ CATALOG = [
         ),
         "filename": "pride_and_prejudice.pdf",
         "gutenberg_id": 1342,
+        "premium": False,
     },
     {
         "id": 3,
@@ -40,6 +42,7 @@ CATALOG = [
         ),
         "filename": "sherlock_holmes.pdf",
         "gutenberg_id": 1661,
+        "premium": False,
     },
     {
         "id": 4,
@@ -53,6 +56,7 @@ CATALOG = [
         ),
         "filename": "alice_in_wonderland.pdf",
         "gutenberg_id": 11,
+        "premium": False,
     },
     {
         "id": 5,
@@ -66,6 +70,7 @@ CATALOG = [
         ),
         "filename": "moby_dick.pdf",
         "gutenberg_id": 2701,
+        "premium": False,
     },
     {
         "id": 6,
@@ -79,6 +84,7 @@ CATALOG = [
         ),
         "filename": "the_republic.pdf",
         "gutenberg_id": 1497,
+        "premium": False,
     },
     {
         "id": 7,
@@ -92,6 +98,7 @@ CATALOG = [
         ),
         "filename": "frankenstein.pdf",
         "gutenberg_id": 84,
+        "premium": False,
     },
     {
         "id": 8,
@@ -105,9 +112,10 @@ CATALOG = [
         ),
         "filename": "the_odyssey.pdf",
         "gutenberg_id": 1727,
+        "premium": False,
     },
 
-    # ── 20 new books ─────────────────────────────────────────────────────
+    # ── Premium books (ids 9-28) — 75 Telegram Stars ──────────────────────
 
     # Self-help / Motivation
     {
@@ -122,6 +130,7 @@ CATALOG = [
         ),
         "filename": "as_a_man_thinketh.pdf",
         "gutenberg_id": 4507,
+        "premium": True,
     },
     {
         "id": 10,
@@ -135,6 +144,7 @@ CATALOG = [
         ),
         "filename": "think_and_grow_rich.pdf",
         "gutenberg_id": 1232,
+        "premium": True,
     },
     {
         "id": 11,
@@ -149,6 +159,7 @@ CATALOG = [
         ),
         "filename": "the_science_of_getting_rich.pdf",
         "gutenberg_id": 1542,
+        "premium": True,
     },
     {
         "id": 12,
@@ -163,6 +174,7 @@ CATALOG = [
         ),
         "filename": "the_master_key_system.pdf",
         "gutenberg_id": 22943,
+        "premium": True,
     },
     {
         "id": 13,
@@ -177,6 +189,7 @@ CATALOG = [
         ),
         "filename": "in_tune_with_the_infinite.pdf",
         "gutenberg_id": 1628,
+        "premium": True,
     },
     {
         "id": 14,
@@ -191,6 +204,7 @@ CATALOG = [
         ),
         "filename": "self_reliance.pdf",
         "gutenberg_id": 16643,
+        "premium": True,
     },
 
     # Classic Literature
@@ -206,6 +220,7 @@ CATALOG = [
         ),
         "filename": "crime_and_punishment.pdf",
         "gutenberg_id": 2554,
+        "premium": True,
     },
     {
         "id": 16,
@@ -220,6 +235,7 @@ CATALOG = [
         ),
         "filename": "war_and_peace.pdf",
         "gutenberg_id": 2600,
+        "premium": True,
     },
     {
         "id": 17,
@@ -234,6 +250,7 @@ CATALOG = [
         ),
         "filename": "the_count_of_monte_cristo.pdf",
         "gutenberg_id": 1184,
+        "premium": True,
     },
     {
         "id": 18,
@@ -247,6 +264,7 @@ CATALOG = [
         ),
         "filename": "jane_eyre.pdf",
         "gutenberg_id": 1260,
+        "premium": True,
     },
     {
         "id": 19,
@@ -260,6 +278,7 @@ CATALOG = [
         ),
         "filename": "great_expectations.pdf",
         "gutenberg_id": 1400,
+        "premium": True,
     },
     {
         "id": 20,
@@ -274,6 +293,7 @@ CATALOG = [
         ),
         "filename": "don_quixote.pdf",
         "gutenberg_id": 996,
+        "premium": True,
     },
     {
         "id": 21,
@@ -288,6 +308,7 @@ CATALOG = [
         ),
         "filename": "dracula.pdf",
         "gutenberg_id": 345,
+        "premium": True,
     },
     {
         "id": 22,
@@ -302,6 +323,7 @@ CATALOG = [
         ),
         "filename": "the_picture_of_dorian_gray.pdf",
         "gutenberg_id": 174,
+        "premium": True,
     },
     {
         "id": 23,
@@ -316,6 +338,7 @@ CATALOG = [
         ),
         "filename": "a_tale_of_two_cities.pdf",
         "gutenberg_id": 98,
+        "premium": True,
     },
     {
         "id": 24,
@@ -329,6 +352,7 @@ CATALOG = [
         ),
         "filename": "wuthering_heights.pdf",
         "gutenberg_id": 768,
+        "premium": True,
     },
     {
         "id": 25,
@@ -343,6 +367,7 @@ CATALOG = [
         ),
         "filename": "anna_karenina.pdf",
         "gutenberg_id": 1399,
+        "premium": True,
     },
     {
         "id": 26,
@@ -357,6 +382,7 @@ CATALOG = [
         ),
         "filename": "the_scarlet_letter.pdf",
         "gutenberg_id": 25344,
+        "premium": True,
     },
     {
         "id": 27,
@@ -371,6 +397,7 @@ CATALOG = [
         ),
         "filename": "treasure_island.pdf",
         "gutenberg_id": 120,
+        "premium": True,
     },
     {
         "id": 28,
@@ -385,8 +412,12 @@ CATALOG = [
         ),
         "filename": "les_miserables.pdf",
         "gutenberg_id": 135,
+        "premium": True,
     },
 ]
+
+FREE_CATALOG = [b for b in CATALOG if not b["premium"]]
+PREMIUM_CATALOG = [b for b in CATALOG if b["premium"]]
 
 
 def find_book(book_id: int) -> dict | None:

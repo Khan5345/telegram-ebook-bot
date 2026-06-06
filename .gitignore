@@ -1,7 +1,6 @@
-  __pycache__/
-  *.pyc
-  *.pyo
-  *.pyd
-  .env
-  bot/books/
-  
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+bot/books/
