@@ -1,0 +1,7 @@
+  [build]
+  buildCommand = "pip install -r requirements.txt && python bot/create_samples.py"
+
+  [deploy]
+  startCommand = "python bot/bot.py"
+  restartPolicyType = "always"
+  
