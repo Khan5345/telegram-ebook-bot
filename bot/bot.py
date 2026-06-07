@@ -5,6 +5,7 @@ import telebot
 from flask import Flask
 from telebot import types
 from catalog import CATALOG, FREE_CATALOG, PREMIUM_CATALOG, find_book, search_books
+import stats as stats_tracker
 
 logging.basicConfig(
     level=logging.INFO,
@@ -176,18 +177,20 @@ def send_book_file(chat_id: int, book: dict) -> None:
 
 @bot.message_handler(commands=["start"])
 def cmd_start(message: types.Message) -> None:
+    stats_tracker.record_user(message.from_user.id)
     name = message.from_user.first_name or "there"
     text = (
         f"👋 Welcome, *{name}*\\!\n\n"
         "📚 *Ebook Library Bot*\n\n"
         "Browse our collection of classic public\\-domain books and download them straight to your chat\\.\n\n"
         "*Commands:*\n"
-        "• /books — Browse all 28 books\n"
+        f"• /books — Browse all {len(CATALOG)} books\n"
         "• /premium — Browse premium catalog \\(75 ⭐ Stars each\\)\n"
         "• /search \\[query\\] — Search by title or author\n"
+        "• /stats — Bot usage statistics\n"
         "• /help — Show this message\n\n"
         "📖 *8 books are free* — just tap Download\\.\n"
-        "⭐ *20 books are premium* — unlock each for 75 Telegram Stars\\."
+        f"⭐ *{len(PREMIUM_CATALOG)} books are premium* — unlock each for 75 Telegram Stars\\."
     )
     bot.send_message(message.chat.id, text, parse_mode="MarkdownV2")
 
@@ -205,6 +208,7 @@ def cmd_help(message: types.Message) -> None:
         "• /books — Browse all books \\(free \\+ premium\\)\n"
         "• /premium — Browse premium books only\n"
         "• /search \\[query\\] — Search by title, author, or genre\n"
+        "• /stats — View bot usage statistics\n"
         "• /help — Show this message\n\n"
         "*About Telegram Stars:*\n"
         "Stars are Telegram's in\\-app currency\\. "
@@ -271,6 +275,23 @@ def cmd_search(message: types.Message) -> None:
         parse_mode="MarkdownV2",
         reply_markup=markup,
     )
+
+
+@bot.message_handler(commands=["stats"])
+def cmd_stats(message: types.Message) -> None:
+    s = stats_tracker.get_stats()
+    free_count  = len(FREE_CATALOG)
+    prem_count  = len(PREMIUM_CATALOG)
+    total_count = len(CATALOG)
+    text = (
+        "📊 *Bot Statistics*\n\n"
+        f"👥 *Unique users:*  {s['unique_users']}\n"
+        f"📥 *Books downloaded:*  {s['downloads']}\n"
+        f"⭐ *Stars earned:*  {s['stars_earned']}\n\n"
+        f"📚 *Catalog:*  {total_count} books "
+        f"\\({free_count} free · {prem_count} premium\\)"
+    )
+    bot.send_message(message.chat.id, text, parse_mode="MarkdownV2")
 
 
 # ---------------------------------------------------------------------------
@@ -355,6 +376,7 @@ def cb_download(call: types.CallbackQuery) -> None:
 
     bot.answer_callback_query(call.id, "Sending your ebook…")
     send_book_file(call.message.chat.id, book)
+    stats_tracker.record_download()
 
 
 # ---------------------------------------------------------------------------
@@ -442,6 +464,7 @@ def successful_payment(message: types.Message) -> None:
         parse_mode="MarkdownV2",
     )
     send_book_file(message.chat.id, book)
+    stats_tracker.record_purchase(message.successful_payment.total_amount)
 
 
 # ---------------------------------------------------------------------------
