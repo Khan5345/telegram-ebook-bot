@@ -472,7 +472,8 @@ def health():
 
 
 def start_health_server() -> None:
-    port = int(os.environ.get("BOT_HEALTH_PORT", 5000))
+    # Railway injects $PORT for web services; fall back to BOT_HEALTH_PORT or 5000
+    port = int(os.environ.get("PORT", os.environ.get("BOT_HEALTH_PORT", 5000)))
     logger.info("Health server listening on port %d", port)
     health_app.run(host="0.0.0.0", port=port, use_reloader=False)
 

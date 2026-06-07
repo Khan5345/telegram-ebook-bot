@@ -19,9 +19,10 @@
 
   ## Deploy on Railway
 
-  1. Fork / connect this repo in Railway
+  1. Connect this repo in Railway as a **Web Service**
   2. Set environment variable: `TELEGRAM_BOT_TOKEN` = your bot token
-  3. Railway will auto-run the build & start commands from `railway.toml`
+  3. Railway auto-runs build & start commands from `railway.toml`
+  4. The health endpoint `GET /` keeps the service alive
 
   ## Local setup
 
