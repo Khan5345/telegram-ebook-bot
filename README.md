@@ -1,40 +1,14 @@
 # Telegram Ebook Library Bot
 
-  A Telegram bot that lets users browse a catalog of 28 public-domain ebooks and download them directly in chat.
+A Telegram bot with 33 public-domain and premium ebooks.
 
-  ## Features
+## Commands
+- `/start` — welcome
+- `/books` — full catalog (📖 free · ⭐ premium)
+- `/premium` — premium catalog (75 ⭐ Stars each)
+- `/search [query]` — search by title, author, genre
 
-  - `/start` — welcome message
-  - `/books` — paginated catalog (📖 free · ⭐ premium)
-  - `/premium` — premium-only catalog
-  - `/search [query]` — search by title, author, or genre
-  - **8 free books** — download instantly
-  - **20 premium books** — unlock each for **75 Telegram Stars**
-
-  ## Telegram Stars payment flow
-
-  1. Tap a premium book → tap **Buy for 75 Stars**
-  2. Telegram shows a native payment dialog
-  3. Confirm → book PDF is sent immediately
-
-  ## Deploy on Railway
-
-  1. Connect this repo in Railway as a **Web Service**
-  2. Set environment variable: `TELEGRAM_BOT_TOKEN` = your bot token
-  3. Railway auto-runs build & start commands from `railway.toml`
-  4. The health endpoint `GET /` keeps the service alive
-
-  ## Local setup
-
-  ```bash
-  pip install -r requirements.txt
-  python bot/create_samples.py   # downloads ebooks from Project Gutenberg
-  python bot/bot.py
-  ```
-
-  ## Adding books
-
-  1. Copy your PDF into `bot/books/`
-  2. Add an entry to `CATALOG` in `bot/catalog.py` with `"premium": True/False`
-  3. Restart the bot
-  
+## Deploy on Railway
+1. Connect repo as a **Web Service**
+2. Set `TELEGRAM_BOT_TOKEN` env var
+3. Build/start commands are in `railway.toml`

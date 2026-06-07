@@ -414,6 +414,87 @@ CATALOG = [
         "gutenberg_id": 135,
         "premium": True,
     },
+
+    # ── User-added premium books ───────────────────────────────────────────
+
+    {
+        "id": 29,
+        "title": "The Death of Neo-Darwinism",
+        "author": "Various",
+        "genre": "Science / Philosophy of Biology",
+        "year": "2023",
+        "description": (
+            "A critical examination of the limitations of Neo-Darwinian evolutionary theory, "
+            "exploring emerging scientific challenges to the modern synthesis and what the evidence "
+            "reveals about the complexity of life and biological evolution."
+        ),
+        "filename": "the_death_of_neo_darwinism.pdf",
+        "gutenberg_id": None,
+        "premium": True,
+    },
+    {
+        "id": 30,
+        "title": "The Art of Rhetoric",
+        "author": "Aristotle",
+        "genre": "Philosophy / Communication",
+        "year": "350 BC",
+        "description": (
+            "Aristotle's foundational treatise on the art of persuasion. "
+            "He identifies three modes of persuasion — ethos, pathos, and logos — "
+            "and provides a systematic framework for constructing compelling arguments "
+            "that remains essential reading for speakers, writers, and thinkers today."
+        ),
+        "filename": "the_art_of_rhetoric.pdf",
+        "gutenberg_id": 1144,
+        "premium": True,
+    },
+    {
+        "id": 31,
+        "title": "The Pleasures of Philosophy",
+        "author": "Will Durant",
+        "genre": "Philosophy / Popular Science",
+        "year": "1953",
+        "description": (
+            "Will Durant distills centuries of philosophical wisdom into an accessible and "
+            "entertaining survey. Covering ethics, politics, art, religion, and the nature of "
+            "reality, Durant shows how philosophy can enrich everyday life and guide humanity "
+            "toward a more meaningful existence."
+        ),
+        "filename": "the_pleasures_of_philosophy.pdf",
+        "gutenberg_id": None,
+        "premium": True,
+    },
+    {
+        "id": 32,
+        "title": "Why Nations Fail",
+        "author": "Daron Acemoglu & James A. Robinson",
+        "genre": "Economics / Political Science",
+        "year": "2012",
+        "description": (
+            "A landmark work explaining why some nations are rich and others poor. "
+            "Acemoglu and Robinson argue that political and economic institutions — "
+            "not geography, culture, or ignorance — are the key determinants of prosperity, "
+            "drawing on centuries of history across dozens of countries."
+        ),
+        "filename": "why_nations_fail.pdf",
+        "gutenberg_id": None,
+        "premium": True,
+    },
+    {
+        "id": 33,
+        "title": "Sapiens: A Brief History of Humankind",
+        "author": "Yuval Noah Harari",
+        "genre": "History / Anthropology",
+        "year": "2011",
+        "description": (
+            "A sweeping narrative of humanity's history from the Stone Age to the 21st century. "
+            "Harari explores how Homo sapiens came to dominate the planet through cognitive, "
+            "agricultural, and scientific revolutions — and what the future holds for our species."
+        ),
+        "filename": "sapiens.pdf",
+        "gutenberg_id": None,
+        "premium": True,
+    },
 ]
 
 FREE_CATALOG = [b for b in CATALOG if not b["premium"]]
